@@ -1,0 +1,34 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<input type="radio" name="slider" id="description" checked />
+<input type="radio" name="slider" id="review" />
+<input type="radio" name="slider" id="create-review" id="checker" />
+
+<script>
+    var username = "{{username}}";
+
+    $.ajax({
+        url: '/checkLogin',
+        method: 'POST', 
+        success: function(result) {
+            if (result) {
+                // User is logged in, enable "Create Review" option
+                $('#create-review').prop('disabled', false);
+                
+            } else {
+                // User is not logged in, disable "Create Review" option
+                $('#create-review').prop('disabled', true);
+            }
+        },
+        error: function(error) {
+            console.error("An error occurred:", error);
+        }
+    });
+</script>
+
+<nav>
+    <label for="description" class="description">Description</label>
+    <label for="review" class="review">Reviews</label>
+    <label for="create-review" class="create-review">Create Review</label>
+    <div class="slider"></div>
+</nav>

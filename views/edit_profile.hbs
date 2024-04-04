@@ -1,0 +1,101 @@
+<div class="container">
+    {{> navbar}}
+
+    <div class="form-box">
+        <form action="/submit_edit_profile" method="post" enctype="multipart/form-data" onsubmit="checkChanges()">
+
+            <div class="pfp">
+                <input type="hidden" id="originalFile" value="{{profile.profile_pic}}">
+                <label for="profileImage" class="profile-image-label">
+                    <img
+                        src={{profile.profile_pic}}
+                        alt="Your Image"
+                        class="profile-image"
+                        id="previewImage"
+                    />
+                    <span class="insert-image-text">Insert Image</span>
+                </label>
+                <input
+                    type="file"
+                    id="profileImage"
+                    accept="image/*"
+                    style="display: none"
+                    onchange="previewProfileImage(event); checkChanges();"
+                    name="profile_pic"
+                />
+            </div>
+
+            <div class="username">
+                <i>@{{profile.username}}</i>
+            </div>
+
+            <div class="name-edit">
+                <div class="name">
+                    <h1 id="userName">{{profile.firstname}} {{profile.lastname}}</h1>
+                </div>
+            </div>
+            <hr />
+
+            <div class="display-details">
+                <div class="user-details">
+                    <h4>First Name:</h4>
+                    <input type="text" placeholder="{{profile.firstname}}" name="firstname">
+                </div>
+
+                <div class="user-details">
+                    <h4>Last Name:</h4>
+                    <input type="text" placeholder="{{profile.lastname}}" name="lastname">
+                </div>
+
+                <div class="user-details">
+                    <h4>Username:</h4>
+                    <input type="text" value="{{profile.username}}" name="username" style="display: none">
+                    <input type="text" placeholder="{{profile.username}}" name="nUsername">
+                </div>
+
+                <div class="user-details">
+                    <h4>Email:</h4>
+                    <input type="text" placeholder="{{profile.email}}" name="email">
+                </div>
+
+                <div class="user-details">
+                    <h4>Mobile Number:</h4>
+                    <input type="text" placeholder="{{profile.mobnum}}" name="mobnum">
+                </div>
+            </div>
+
+            <div class="user-details">
+                <h4>Short Description:</h4>
+                <label>
+                    <textarea placeholder="{{profile.shortdesc}}" style="resize: none;" name="shortdesc"></textarea>
+                </label>
+            </div>
+
+            <div class="btn-field">
+                <button type="submit" id="saveBtn">Save</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+    }
+
+    function checkChanges() {
+        // Get all input fields
+        let inputs = document.querySelectorAll('input[type="text"], textarea');
+
+        // Loop through each input field
+        inputs.forEach(input => {
+            // Check if the input field value is different from its placeholder
+            if (input.value === "") {
+                input.value = input.placeholder; // If value is empty, restore the placeholder
+            }
+        });
+    }
+</script>

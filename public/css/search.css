@@ -1,0 +1,385 @@
+/*
+    View the html in Mozilla Firefox browser
+*/
+:root{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+
+    background-image: url('../image/althea/background-2.png');
+    background-size: cover; 
+    background-position: center; 
+    background-position-x: center;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 75px;
+
+    padding-top: 35px;
+}
+
+nav{
+    background: #D2E3C8;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative; 
+    border-bottom: #b8b2b2 solid; 
+    border-width: 3px;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 150px;  
+    height: 150px;
+}
+
+h3{
+    font-size: 50px;
+    color: #092635;
+}
+
+
+.menu-pic{
+    width: 150px;
+    cursor: pointer;
+}
+
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 300px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    border: #b8b2b2 solid;
+    border-width: 0.5px;
+    z-index: 100;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 550px;
+}
+
+
+.sub-menu{
+    background: #fff;
+    padding: 15px;
+
+}
+
+.user-info{
+    align-items: center;
+}
+
+.user-info h2{
+    font-weight: 200;
+    color: #092635;
+}
+
+
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+}
+
+.sub-menu-link p{
+    width: 100%;
+}
+
+.sub-menu-link img{
+    width: 40px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s;
+
+}
+
+.sub-menu-link:hover span{
+    transform: translate(5px);
+}
+
+
+.sub-menu-link:hover p{
+    font-weight: 600;
+}.parent-container {
+    display: flex;
+    flex-direction: column;
+
+    background-image: url('../image/althea/background-2.png');
+    background-size: cover; 
+    background-position: center; 
+    background-position-x: center;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 75px;
+
+    padding-top: 35px;
+}
+
+nav{
+    background: #D2E3C8;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative; 
+    border-bottom: #b8b2b2 solid; 
+    border-width: 3px;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 150px;  
+    height: 150px;
+}
+
+h3{
+    font-size: 50px;
+    color: #092635;
+}
+
+
+.menu-pic{
+    width: 150px;
+    cursor: pointer;
+}
+
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 300px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    border: #b8b2b2 solid;
+    border-width: 0.5px;
+    z-index: 100;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 550px;
+}
+
+
+.sub-menu{
+    background: #fff;
+    padding: 15px;
+
+}
+
+.user-info{
+    align-items: center;
+}
+
+.user-info h2{
+    font-weight: 200;
+    color: #092635;
+}
+
+
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+}
+
+.sub-menu-link p{
+    width: 100%;
+}
+
+.sub-menu-link img{
+    width: 40px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s;
+
+}
+
+.sub-menu-link:hover span{
+    transform: translate(5px);
+}
+
+
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+
+/* END OF MENU BAR */
+
+.search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+
+}
+
+.search-panel-outer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
+
+.background_img{
+    background-image: url('image/image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    filter: blur(1.5px);
+}
+
+.searchlbl{
+    display: flex;
+    position: absolute;
+    top: 160px;
+    left: 125px;
+    right: 353px;
+    padding: 12px;
+    color: white;
+    font-size: 28px;
+}
+
+/* whole container */
+.search-text-area-border{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    top: 215px;
+    left: 120px;
+    right: 376px;
+    padding: 12px; /* Adjust padding as needed */
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    height: 100px;
+    width: 1500px;
+}
+
+.textfield{
+    text-indent: 10px;
+    padding: unset;
+    height: 70px;
+    width: 800px;
+    border-radius: 30px;
+    border: 1px solid black;
+    margin-right: 10px;
+
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+.filter-menu{
+    padding-top: 3px;
+}
+
+.filter_rating{
+    padding-left: 16px;
+    font-size: 19px;
+    font-family: "JetBrains Mono ExtraBold", sans-serif;
+    height: 40px;
+    width: 150px;
+    border-radius: 30px;
+    border: 0.5px solid black;
+    margin-right: 5px;
+    margin-top: 12px;
+    background-color: #f4d468;
+    color: white;
+    font-weight: bold;
+}
+
+.filter_rating option{
+    color: #4d431b;
+}
+.search_icon{
+    padding-left: 5px;
+    height: 30px;
+    width: 30px;
+    transition: transform 0.3s ease;
+
+    margin-top: 12px;
+}
+.search_icon:hover{
+    transform: scale(1.2);
+}
+
+.search_button{
+    padding-top: 6px;
+    border: 0px;
+    background: transparent;
+}
+
+.search-form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}

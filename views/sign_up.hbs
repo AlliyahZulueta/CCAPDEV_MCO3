@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="form-box">
+        <h1> Let's get you started</h1>
+        <p> Let's create your account by filling out the following information</p>
+
+        <form action="/register" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <div class="profile-section">
+                <label for="profileImage" class="profile-image-label">
+                    <img src="image/alli/profile.png" alt="Your Image" class="profile-image" id="previewImage">
+                    <span class="insert-image-text">Insert Image</span>
+                </label>
+                <input type="file" id="profileImage" accept="image/*" style="display: none" onchange="previewProfileImage(event)" name="profile_pic" >
+            </div>
+        
+            <div class="input-group">
+                <div class="input-field">
+                    <input type="text" placeholder="First Name" name="firstname" required> 
+                </div>
+
+                <div class="input-field">
+                    <input type="text" placeholder="Last Name" name="lastname" required>
+                </div>
+                <br>
+                <div class="input-field">
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" placeholder="Email" name="email" required>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" placeholder="Mobile Number" name="mobnum" required>
+                </div>
+                
+                <div class="input-field">
+                    <textarea placeholder="Short Description" style="resize: none;" name="shortdesc" required></textarea>
+                </div>
+                <br>
+            
+                <div class="input-field">
+                    <input type="password" id="passwordInput" placeholder="Password" name="password" required>
+                    <img src="image/alli/password.png" id="togglePassword" alt="Toggle Password">
+                </div>
+            
+                <div class="input-field">
+                    <input type="password" id="confirmPasswordInput" placeholder="Confirm Password" name="confirmPassword" required>
+                    <img src="image/alli/password.png" id="toggleConfirmPassword" alt="Toggle Password">
+                </div>
+            
+                <div class="constraints">
+                        <p> Password must contain: </p>
+                        <ul>
+                            <li>At least 6 characters</li>
+                            <li>At least one uppercase letter (A-Z)</li>
+                            <li>At least one lowercase letter (a-z)</li>
+                            <li>At least one number (0-9)</li>
+                        </ul>
+                </div>
+                <p> Already have an account? <a href="/log_in"> Sign in. </a> </p>
+            </div>
+            
+            <div class="btn-field">
+                <button type="submit" id="createAccountBtn"> Create Account </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        var fileInput = document.getElementById('profileImage');
+        var file = fileInput.files[0];
+        var firstname = document.getElementsByName('firstname')[0].value;
+        var lastname = document.getElementsByName('lastname')[0].value;
+        var username = document.getElementsByName('username')[0].value;
+        var email = document.getElementsByName('email')[0].value;
+        var mobnum = document.getElementsByName('mobnum')[0].value;
+        var shortdesc = document.getElementsByName('shortdesc')[0].value;
+        var password = document.getElementsByName('password')[0].value;
+        var confirmPassword = document.getElementsByName('confirmPassword')[0].value;
+
+        // Form Validation
+        if (!file) {
+            alert('Profile picture is required');
+            return false;
+        }
+
+        if (!firstname || !lastname || !username || !email || !mobnum || !shortdesc || !password || !confirmPassword || !file) {
+            alert('All fields are required');
+            return false;
+        }
+
+        // Password validation
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters.');
+            return false;
+        }
+
+        if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password)) {
+            alert('Password must contain at least one uppercase letter, one lowercase letter, and one number.');
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return false;
+        }
+
+        return true; // Form submission allowed
+    }
+</script>

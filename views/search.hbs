@@ -1,0 +1,42 @@
+<div class="parent-container">
+    {{> navbar}}
+
+    <div class="search-container">
+      <div class="search-panel-outer">
+        <img src="image/image.jpg" class="background_img"/>
+        <div class="searchlbl">Find nearby laundry services.</div>
+
+        <div class="search-text-area-border">
+          <form class ="search-form-container" action="/search_result" onsubmit="updatePlaceholder()">
+            <div class="search-menu">
+              <input id="search-txt" name="search-txt" class="textfield" placeholder="   Enter establishment’s name or description" />
+            </div>
+            <div class="filter-menu">
+              <select id="filter" name="filter" class="filter_rating">
+                <option value="filterlbl">FILTER</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+              </select>
+            </div>
+            <div class="search-icon-container">
+              <button type="submit" class="search_button">
+                <img src="image/search_logo.png" alt="Search" class="search_icon" />
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu");
+    }
+</script>

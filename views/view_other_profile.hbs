@@ -1,0 +1,153 @@
+<div class="parent-container">
+        {{> navbar_otherprofile}}
+        
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="profile-card-inner">
+                    <div class="user-info">
+                        <div class="profile-card-inner-username-img-container">
+                            <div class="profile-card-inner-username-img">
+                                <img class="img_user" src={{profile.profile_pic}} alt="user's image" />
+                            </div>
+
+                            <div class="profile-card-inner-username-stats">
+                                <div>
+                                    <span class="rating-number"><b>{{profile.ratingCount}}</b> ratings</span>
+                                    <span class="rating-avg">(<b>{{profile.rating_ave}}</b> avg)</span><br>
+                                </div>
+                                <span class="reviews-number"><b>{{profile.reviewsNo}}</b> reviews</span>
+                            </div>
+                        </div>
+                        <div class="profile-card-inner-username-description-container">
+                            <div class="username-container">
+                                <span class="username">{{profile.username}}</span>
+                            </div>
+                            <div class="userdesc-container">
+                                <span class="description">{{profile.shortdesc}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="user-info-bottom">
+
+                        <!-- REVIEWER SECTION-->
+                        <div class="reviews-container">
+
+                            <div class="reviews-header">
+                                <div class="reviews-header-title-container">
+                                    <div class="reviews-header-title">
+                                        <span class="review-username" >{{username}}'s review</span>
+                                    </div>
+                                    <div class="separator"></div>
+                                </div>
+                            </div>
+
+                            {{#each reviews}}
+                                <div id = "reviews-card1" class="reviews-card1">
+                                    <div class="reviews-card1-top">
+                                        <div class="reviews-card1-stars1">
+                                            <!-- 5 STARS-->
+                                            {{{generateStars rating}}}
+                                        </div>
+                                        <div class="reviews-card1-store-bgd">
+                                            <span class="reviews-card1-store">{{shop}}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviews-card1-middle">
+                                        <div class="review">{{content}}</div>
+                                    </div>
+                                    <div class="reviews-card1-bottom">
+                                        <div class="reviews-card1-actions">
+                                            <div class="reviews-card1-bottom-likes">
+                                                <img class="img_like" src="image/like.png" />
+                                                <span class="num-likes">{{likes}}</span>
+                                            </div>
+                                            <div class="reviews-card1-bottom-dislikes">
+                                                <img class="img_dislike" src="image/dislike.png" />
+                                                <span class="num-dislikes">{{dislikes}}</span>
+                                            </div>
+                                        </div>
+                                        <span class="review_past-time">{{date}}</span>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+
+                        <!-- COMMENT SECTION-->
+                        <div class="comments-container">
+
+                            <div class="comments-header">
+                                <div class="comments-header-title-container">
+                                    <div class="comments-header-title">
+                                        <span class="comments-username" >{{username}}'s comment</span>
+                                    </div>
+                                    <div class="separator"></div>
+                                </div>
+                            </div>
+
+                            {{#each replies}}
+                                <div id = "comments-card1" class="comments-card1">
+                                    <div class="comments-card1-top">
+                                        <div class="comments-card1-store-bgd">
+                                            <div class="comments-card1-store">{{shopName}}</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="comments-card1-middle">
+                                        <div class="review">{{content}}</div>
+                                    </div>
+
+                                    <div class="comments-card1-bottom">
+                                        <div class="comments-card1-actions">
+                                            <div class="comments-card1-bottom-likes">
+                                                <img class="img_like" src="image/like.png" />
+                                                <span class="num-likes">{{likes}}</span>
+                                            </div>
+                                            <div class="comments-card1-bottom-dislikes">
+                                                <img class="img_dislike" src="image/dislike.png" />
+                                                <span class="num-dislikes">{{dislikes}}</span>
+                                            </div>
+                                        </div>
+                                        <span class="comments_past-time">{{date}}</span>
+                                    </div>
+                                </div>
+                            {{/each}}                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Calculate total height of reviews
+        function lengthComments() {
+            const comments = document.querySelectorAll('.comments-card1');
+            console.log(comments.length);
+            return comments.length;
+        }
+
+        // Set height of profile-card and profile-card-inner based on total reviews height
+        function setProfileCardHeight() {
+            const profileCard = document.querySelector('.profile-card');
+            const profileCardInner = document.querySelector('.profile-card-inner');
+            const totalReviewsHeight = lengthComments() * 120;
+            console.log(totalReviewsHeight);
+
+            profileCard.style.height = profileCard.offsetHeight + totalReviewsHeight + "px";
+            profileCardInner.style.height = profileCardInner.offsetHeight + totalReviewsHeight + "px";
+            console.log(profileCard.offsetHeight);
+        }
+
+        // Call the function to set profile-card height after dynamic content is rendered
+        setProfileCardHeight();
+    });
+</script>

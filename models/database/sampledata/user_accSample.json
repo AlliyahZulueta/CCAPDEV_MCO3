@@ -1,0 +1,64 @@
+[
+    {
+        "username" : "lunaris",
+        "password" : "$2b$10$ymC8Fg8YluV1S4A8EVx35u2m47qXWYK1PcbbfRceIrF1cj76CyZTq",
+        "isLoggedin" : false,
+        "remeberMe" : false
+    },
+
+    {
+        "username" : "azulalala",
+        "password" : "$2b$10$EModqxsXWcEILXUle3vlYe./z324oH3EPCxiWYKJIj1g.H49bqp6i",
+        "isLoggedin" : false,
+        "remeberMe" : false
+    },
+
+    {
+        "username" : "taylornation",
+        "password" : "$2b$10$eJ21d9BN1TpezHNMGP4Zx.ZoirX9Q7efyqqzTCXnibKrIoN9PNVMe",
+        "isLoggedin" : false,
+        "remeberMe" : false
+    },
+
+    {
+        "username" : "livvy200",
+        "password" : "$2b$10$zfF0aefP3WeBJN1jH4e2WOL2mk0YOF5Btat/OBXJvvzxoVPQNJpNe",
+        "isLoggedin" : false,
+        "remeberMe" : false
+    },
+
+    {
+        "username" : "MgaTambay01",
+        "password" : "$2b$10$654Kx5iaVAF6ERG9idrSSOneiTI8eQC9VxemDHZNI3FcdzQUGSK9m",
+        "isLoggedin" : false,
+        "remeberMe" : false
+    },
+
+    {
+        "username" : "AndresMulach",
+        "password" : "$2b$10$OkSFZTZmNp8G8iJOdmwNbeJCuljUaebcNJs4OaC5L9TXLKE7lQpb6",
+        "isLoggedin" : false,
+        "remeberMe" : false
+    },
+
+    {
+        "username" : "AtashaMulach",
+        "password" : "$2b$10$JkhHAP4Wrsd267Ic/.yefe3pEvxRjGGJESNIla5h9KaN1Co1QBUzu",
+        "isLoggedin" : false,
+        "remeberMe" : false
+    },
+
+    {
+        "username" : "JuliaBaretto",
+        "password" : "$2b$10$pYInr9PO4/xY2UZuF/zsY.T0XXAjITPEOMcHdapv.Dn3U/2GRJad6",
+        "isLoggedin" : false,
+        "remeberMe" : false
+    },
+
+    {
+        "username" : "JuanKarlos",
+        "password" : "$2b$10$qgIq2XtXHrZalEam1HRAVOMXLkcLmzNTVv0Ww9T9.FG4E6.L6Xg9W",
+        "isLoggedin" : false,
+        "remeberMe" : false
+    }
+]

@@ -1,0 +1,242 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="review-container">
+    <h1>{{currentUsername}}</h1>
+    {{#each reviews}}
+        <div class="review-parent-container">
+            <div class="review-1"> 
+                <div class="user-review-header-1">
+                    <img src="{{profile_pic}}" alt="profile" class="profile-img">
+                    <span class="username-1">{{username}}</span>
+                    <div class="stars"> {{{generateStars rating}}}</div> 
+                    <span class="date">{{date}}</span>
+                </div>
+
+                <div class="user-review-title-1">
+                    {{title}}
+                </div>
+
+                <div class="user-review-comment-1">
+                    <p class="comment">
+                        {{content}}
+                    </p>
+                    <button class="show-more-btn">Show more...</button>
+                </div>
+
+                <div class="user-review-image-1">
+                    <img src="{{commentImg}}" alt="">
+                </div>
+                
+                <div class="user-review-actions-1" disabled>
+                    <img id="likeImage_{{_id}}" src="image/althea/like.png" alt="" class="like" onclick="toggleLike(this, '{{_id}}')">  
+                    <h1 class="like-counter">{{likes}}</h1>
+                    <img id="dislikeImage_{{_id}}" src="image/althea/thumbsdown.png" alt="" class="dislike" onclick="toggleDislike(this, '{{_id}}')"> 
+                    <h1 class="thumbsdown-counter">{{dislikes}}</h1>
+                
+
+                    <script>
+                        // Make AJAX request to check if the review is liked
+                        var reviewId = "{{_id}}";
+                        $.ajax({
+                            url: '/checkLikeReview/' + reviewId,
+                            method: 'POST',
+                            success: function(result) {
+                                if(result) {
+                                    //set img src="image/althea/blue-like.png"
+                                    $('#likeImage_{{_id}}').attr('src', 'image/althea/blue-like.png');
+                                }
+                                else $('#likeImage_{{_id}}').attr('src', 'image/althea/like.png');
+                            },
+                            error: function(error) {
+                                console.error("An error occurred:", error);
+                            }
+                        });
+
+                        $.ajax({
+                            url: '/checkDislikeReview/' + reviewId,
+                            method: 'POST',
+                            success: function(result) {
+                                if(result) {
+                                    //set img src="image/althea/blue-like.png"
+                                    $('#dislikeImage_{{_id}}').attr('src', 'image/althea/thumbsdown-red.png');
+                                }
+                                else $('#dislikeImage_{{_id}}').attr('src', 'image/althea/thumbsdown.png');
+                            },
+                            error: function(error) {
+                                console.error("An error occurred:", error);
+                            }
+                        });
+                    </script>
+
+
+                    <script>
+                        $.ajax({
+                            url: '/checkLogin',
+                            method: 'POST', 
+                            success: function(result) {
+                                if (result) {
+                                    // User is logged in, enable "Create Review" option
+                                    $('.user-review-actions-1').css('pointer-events', 'auto');
+                                } else {
+                                    // User is not logged in, disable "Create Review" option
+                                    $('.user-review-actions-1').css('pointer-events', 'none');
+                                }
+                            },
+                            error: function(error) {
+                                console.error("An error occurred:", error);
+                            }
+                        });
+                    </script>
+
+                    <div id="actions-left" class="actions-left" style="display: none;">
+                        <img src="image/althea/edit.png" alt="" class="edit" onclick="editReview(this, '{{_id}}')">
+                        <img src="image/althea/trash.png" alt="" class="delete" onclick="deleteReview('{{shop}}','{{_id}}')">
+                    </div>
+
+                    <script>
+                        var username = "{{username}}";
+
+                        $.ajax({
+                            url: '/checkEqual',
+                            method: 'POST', 
+                            data: { username: username }, // Data you want to send to the server
+                            success: function(result) {
+                                if (result) {
+                                    var actionsLeftElements = document.querySelectorAll('.actions-left');
+                                    actionsLeftElements.forEach(function(element) {
+                                        element.style.display = 'block';
+                                    });
+                                }
+                            },
+                            error: function(error) {
+                                console.error("An error occurred:", error);
+                            }
+                        });
+                    </script>
+
+                </div>
+            </div>
+
+            <div class="make-comments-container" disabled>
+                <div class="comment-input-container">
+                    <textarea class = "commentTitle" id="commentTitle_{{_id}}" cols="1" rows="1" placeholder="Title"></textarea>
+                   <textarea class = "commentInput" id="commentInput_{{_id}}" rows="4" cols="50" placeholder="Write your comment here..."></textarea>
+                   <button id ="postCommentBtn" class="post-comment-btn" onclick="postComment('{{_id}}')">Post Comment</button>
+                </div>
+            </div>
+
+            <script>
+                $.ajax({
+                    url: '/checkLogin',
+                    method: 'POST', 
+                    success: function(result) {
+                        if (result) {
+                            // User is logged in, enable "Create Review" option
+                            $('.make-comments-container').css('pointer-events', 'auto');
+                        } else {
+                            // User is not logged in, disable "Create Review" option
+                            $('.make-comments-container').css('pointer-events', 'none');
+                        }
+                    },
+                    error: function(error) {
+                        console.error("An error occurred:", error);
+                    }
+                });
+            </script>
+
+             <script>
+                function postComment(reviewId) {
+                    var title = $('#commentTitle_' + reviewId).val();
+                    var content = $('#commentInput_' + reviewId).val();
+                    
+                    var username = "{{username}}";  // need to change dapat current userename 
+                    var profilePic = "{{profile_pic}}"; // need to change dapat yung ano may ari na 
+
+                    $.ajax({
+                        url: '/reviews/' + reviewId + '/replies',
+                        method: 'POST',
+                        data: {
+                            title: title,
+                            content: content,
+                            username: username,
+                            profile_pic: profilePic,
+                            date: new Date().toLocaleDateString() 
+                        },
+                        success: function(response) {
+                            console.log('Reply posted successfully:', response);
+                        },
+                        error: function(error) {
+                            console.error('An error occurred while posting the reply:', error);
+                        }
+                    });
+                   
+                    function autoRefresh() {
+                        window.location = window.location.href;
+                        }
+                            setInterval(autoRefresh, 0);
+                     }
+            </script>
+
+            {{#each replies}}
+                <div class="comments-container">
+                    <div class="user-review-header-1">
+                        <img src="{{profile_pic}}" alt="profile" class="profile-img">
+                        <span class="username-1">{{username}}</span>
+
+                        <span class="date">{{date}}</span>
+                    </div>
+
+                    <div class="user-review-title-1">
+                        {{title}}
+                    </div>
+
+                    <div class="user-review-comment-1">
+                        <p class="reply">{{content}}</p>
+                    </div>
+                    
+                    <div class="user-review-actions-1">
+                        <img id="likeImageRep_{{_id}}" src="image/althea/like.png" alt="" class="like" onclick="toggleLikeReply(this, '{{../_id}}', '{{_id}}')">
+                        <h1 class="like-counter">{{likes}}</h1>
+                        <img id="dislikeImageRep_{{_id}}" src="image/althea/thumbsdown.png" alt="" class="dislike" onclick="toggleDislikeReply(this, '{{../_id}}', '{{_id}}')">
+                        <h1 class="thumbsdown-counter">{{dislikes}}</h1>
+                    </div>
+
+                    <script>
+                        // Make AJAX request to check if the review is liked
+                        var replyId = "{{_id}}";
+                        $.ajax({
+                            url: '/checkLikeReply/' + replyId,
+                            method: 'POST',
+                            success: function(result) {
+                                if(result) {
+                                    //set img src="image/althea/blue-like.png"
+                                    $('#likeImageRep_{{_id}}').attr('src', 'image/althea/blue-like.png');
+                                }
+                                else $('#likeImageRep_{{_id}}').attr('src', 'image/althea/like.png');
+                            },
+                            error: function(error) {
+                                console.error("An error occurred:", error);
+                            }
+                        });
+
+                        $.ajax({
+                            url: '/checkDislikeReply/' + replyId,
+                            method: 'POST',
+                            success: function(result) {
+                                console.log(result);
+                                if(result) {
+                                    //set img src="image/althea/blue-like.png"
+                                    $('#dislikeImageRep_{{_id}}').attr('src', 'image/althea/thumbsdown-red.png');
+                                }
+                                else $('#dislikeImageRep_{{_id}}').attr('src', 'image/althea/thumbsdown.png');
+                            },
+                            error: function(error) {
+                                console.error("An error occurred:", error);
+                            }
+                        });
+                    </script>
+                </div>
+            {{/each}}
+        </div>
+    {{/each}}
+</div>

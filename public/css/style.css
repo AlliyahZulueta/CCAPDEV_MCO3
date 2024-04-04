@@ -1,0 +1,1193 @@
+/* FONTS */
+@import url("//fonts.googleapis.com/css?family=Tenor+Sans");
+@import url("//fonts.googleapis.com/css?family=Coda+Caption");
+@import url("//fonts.googleapis.com/css?family=Artifika");
+
+*{
+    font-family: 'Poppina', sans-serif;
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+
+    background-image: url('../image/althea/background-2.png');
+    background-size: cover; 
+    background-position: center; 
+    background-position-x: center;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 75px;
+
+    padding-top: 35px;
+}
+
+nav{
+    background: #9BB0C1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative; 
+    border-bottom: #b8b2b2 solid; 
+    border-width: 3px;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 150px;  
+    height: 150px;
+}
+
+h3{
+    font-size: 50px;
+    color: #092635;
+}
+
+
+.menu-pic{
+    width: 150px;
+    cursor: pointer;
+}
+
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 300px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    border: #b8b2b2 solid;
+    border-width: 0.5px;
+    z-index: 100;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 550px;
+}
+
+
+.sub-menu{
+    background: #fff;
+    padding: 15px;
+
+}
+
+.user-info{
+    align-items: center;
+}
+
+.user-info h2{
+    font-weight: 200;
+    color: #092635;
+}
+
+
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+}
+
+.sub-menu-link p{
+    width: 100%;
+}
+
+.sub-menu-link img{
+    width: 40px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s;
+
+}
+
+.sub-menu-link:hover span{
+    transform: translate(5px);
+}
+
+
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+
+.name-container-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:100px;
+
+    margin-top: 50px;
+
+    position: relative;
+}
+
+.name-container-2 {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+
+    background-color: #9BB0C1;
+    text-decoration: none;
+    width: 70%;
+    height:75px;
+}
+
+#shop-name {
+    height: 75px;
+    padding-left: 2%;
+}
+
+#shop-name a {
+    color: #092635;
+    text-decoration: none;
+}
+
+/* For the tabs with slide portion of the website - start*/
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    max-width: 100%;
+    height: 1000px;
+    
+    padding: 30px 10px;
+    border-radius: 15px;
+    display: flex;
+
+}
+
+.menu-container nav {
+    position: relative;
+    height: 100px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+}
+
+.menu-container nav::after {
+    content: "";
+    background-color: silver;
+    width: 100%;
+    height: 4.5px;
+    position: absolute;
+    top: 47px;
+    filter: blur(0.5px);
+}
+
+.menu-container nav label {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: calc(100% / 3);
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: "Artifika";
+    font-style: italic;
+}
+
+#blog:checked ~ nav label.description,
+#blog:checked ~ nav label.review,
+#blog:checked ~ nav label.create-review {
+    color: #6f55ca;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.menu-container nav .slider {
+    position: absolute;
+    height: 4.5px;
+    background-color: #6f55ca;
+    border-radius: 20px;
+    width: 20%;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    top: 47px;
+    transition: all 0.3s ease;
+    filter: blur(0.4px);
+}
+
+
+
+.menu-container nav label:nth-child(1) {
+    margin-left: -100px;
+    margin-right: 100px;
+}
+
+.menu-container nav label:nth-child(3) {
+    margin-right: -100px;
+    margin-left: 100px
+}
+
+#review:checked ~ nav .slider {
+    left: 40%;
+}
+
+#create-review:checked ~ nav .slider {
+    left: 80%;
+}
+
+#description:checked ~ nav .description {
+    color: #6f55ca;
+}
+
+#review:checked ~ nav .review {
+    color: #6f55ca;
+}
+
+#create-review:checked ~ nav .create-review {
+    color: #6f55ca;
+}
+
+/*                                                - end */
+
+/* CONTAINER - 1 */
+
+section {
+    filter: blur(0.3px);
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .content {
+    display: none;
+    margin-bottom: 20px;
+}
+
+section .content .content-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.rate-tag-container {
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid gray;
+    width: 1490px;
+    height:100px;
+
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+    background-color: white;
+}
+
+.ribbon {
+    margin-top: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin: 20px 30px 10px 20px; /*top - right - bottom - left*/
+    border: 1px solid grey
+}
+
+.rate-desc {
+    font-family: "Artifika";
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+.operating-hours-container {
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid gray;
+    width: 1490px;
+    height:100px;
+
+    border-radius: 15px;
+    margin-bottom: 10px;
+
+    background-color: white;
+}
+
+.clock {
+    margin-top: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin: 20px 30px 10px 20px; /*top - right - bottom - left*/
+    border: 1px solid grey
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-1 {
+    font-family: "Artifika";
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+    color:green
+}
+
+.time-2 {
+    font-family: "Artifika";
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.contact-info-container {
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid gray;
+    width: 1490px;
+    height:100px;
+
+    border-radius: 15px;
+    margin-bottom: 10px;
+
+    background-color: white;
+}
+
+.contact {
+    margin-top: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin: 20px 30px 10px 20px; /*top - right - bottom - left*/
+    border: 1px solid grey
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-1 {
+    font-family: "Artifika";
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.contact-2 {
+    font-family: "Artifika";
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid gray;
+    width: 1490px;
+    height: 750px;
+
+    border-radius: 15px;
+    margin-bottom: 10px;
+
+    position: relative;
+    background-color: white;
+}
+
+.address {
+    display: flex;
+    flex-direction: row;
+}
+
+.map-logo {
+    margin-top: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin: 20px 30px 10px 20px; /*top - right - bottom - left*/
+    border: 1px solid grey
+}
+
+.location {
+    font-family: "Artifika";
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+#description:checked ~ section .content-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTAINER - 2 */
+.content-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 1480px;
+    height: 150px;
+
+    background-color: #9BB0C1;
+    box-shadow: 0px 4px 10px -4px #191919;
+    border-radius: 15px;
+    line-height: 30px;
+
+    margin-top: 30px;
+
+    font-size: 40px;
+
+    color: white;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row;
+}
+
+.star-rating > img {
+    width: 35px;
+    height: 35px;
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+.comment-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 1480px;
+    height: auto;
+
+    margin-top: 20px;
+
+    position: relative;
+
+    background: none;
+}
+
+.commentInput {
+    width: 100%;
+    resize: none;
+
+    border-radius: 10px;
+
+    padding-left: 10px;
+    padding-top: 10px;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    overflow-y: auto;
+}
+
+.commentTitle{
+    width: 100%;
+    resize: none;
+
+    border-radius: 10px;
+
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    overflow-y: auto;
+
+}
+
+#postCommentBtn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px; 
+    right: 5px; 
+    font-size: 12;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(252, 112, 112);
+}
+
+#postCommentBtn:hover {
+    background-color: red;
+}
+
+.review-1, .comments-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 1480px;
+    height: auto;
+
+    border: 1px solid grey;
+    border-radius: 15px;
+
+    margin-top: 20px;
+
+    position: relative;
+
+    background-color: white;
+}
+
+.comments-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 1200px;
+
+    margin-left:auto;
+}
+
+.user-review-header-1 {
+    display: flex;
+    flex-direction: row;
+    
+    margin-left: 20px;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 100%;
+    border: 1px solid grey;
+
+    margin-top: 20px;
+}
+
+.username-1 {
+    margin-top: 2px;
+    font-size: 25px;
+    font-family: "Artifika";
+
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.stars {
+    margin-left: 20px;
+    margin-top: 28px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.starsRating {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.starsImg {
+    width: 25px;
+    height: 25px;
+}
+
+.star-container {
+    display: inline-block;
+    margin-top: 28px;
+    margin-left: 20px;
+}
+
+.stars-img {
+    width: 22px;
+    height: 22px;
+}
+
+.date {
+    position: absolute;
+    margin-top: 30px;
+
+    font-family: "Artifika";
+    color: grey;
+    font-weight: lighter;
+    font-style: italic;
+
+    top: 0;
+    right: 20px;
+}
+
+.user-review-title-1 {
+    width: 90%;
+    margin: 0 auto;
+
+    padding-left: 15px;
+    padding-right: 10px;
+
+    font-weight: bolder;
+    font-size: 25px;
+
+    color: blueviolet;
+
+    text-transform: capitalize;
+}
+
+.user-review-comment-1, .hide, .more {
+    width: 90%;
+    margin: 0 auto;
+
+    /* border: 1px solid grey;  */
+    /* border-radius: 15px;  */
+    word-wrap: break-word; /* Ensure long words wrap onto the next line */
+    word-break: break-all; /* Break long words to prevent stretching */
+}
+
+.user-review-comment-1 .comment, .reply {
+    font-size: 22px;
+    text-align: justify;
+}
+
+.show-more-btn {
+
+    padding: 10px;
+    background-color: #ff0268;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.user-review-comment-1:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+.hide {
+    display: none;
+}
+
+.user-review-image-1, .user-review-video-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: 1px solid grey;
+    width: 500px;
+    height: 500px;
+
+    border-radius: 10px;
+    margin-left: 80px;
+    margin-bottom: 70px;
+}
+
+.user-review-image-1 img{
+    width: 500px;
+    height: 500px;
+}
+
+.user-review-video-1 video {
+    width: 500px;
+    height: 500px;
+}
+
+.user-review-actions-1 {
+    display: flex;
+    flex-direction: row;
+
+    width: 1480px;
+    height: 50px;
+
+    /* border: 1px solid gray;  */
+
+    bottom: 0px;
+
+    position: absolute;
+}
+
+.like, .dislike, .report{
+    width: 35px;
+    height: 35px;
+
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.edit, .delete {
+    width: 35px;
+    height: 35px;
+    margin-left: 0px;
+}
+
+.edit-title {
+    resize: none;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    text-transform: capitalize;
+    font-size: 22px;
+    font-weight: bolder;
+    color: #9658f3;
+    font-family: "Artifika";
+}
+
+.edit-comment {
+    resize: none;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+
+    font-size: 18px;
+    text-align: left;
+    align-items: left;
+    font-family: "Artifika";
+}
+
+.save-btn, .cancel-btn {
+    position: absolute; 
+    bottom: 10px; 
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.save-btn {
+    left: calc(50% - 120px); 
+    background-color: green;
+}
+
+.cancel-btn {
+    left: calc(50% + 20px); 
+    background-color: red;
+}
+
+.actions-left {
+    position: absolute;
+    margin-bottom: 20px;
+
+    top: 0;
+    right: 20px;
+}
+
+.like-counter, .thumbsdown-counter {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.countRate {
+    font-weight: bold;
+    color: #092635;
+}
+
+#review:checked ~ section .content-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTAINER - 3 */
+.comment-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 700px;
+    height: auto;
+
+    border: 1px solid gray;
+    border-radius: 15px;
+
+    margin-top: 20px;
+    padding-bottom: 30px;
+
+    background-color: white;
+}
+
+.name-store {
+    display: flex;
+    align-items: center;
+
+    font-family: "Artifika";
+    background-color: #D2E3C8;
+    width: 500px;
+    height: 50px;
+
+    margin-left: 20px;
+    margin-top: 30px;
+    padding-left: 20px;
+
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+#review-title {
+    width: 650px;
+    height: 60px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+
+    resize: none;
+
+    font-family: "Artifika"; 
+    font-size: 25px; 
+
+    border: 1px solid grey; 
+    border-radius: 10px; 
+
+    line-height: 30px;
+}
+
+#review-comment {
+    width: 650px;
+    height: 200px;
+
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+
+    resize: none;
+
+    font-family: "Artifika"; 
+    font-size: 14px; 
+
+    border: 1px solid grey; 
+    border-radius: 10px; 
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 650px;
+    height: 200px;
+
+    margin-left: 20px;
+    margin-top: 30px;
+
+    border: 1px dashed grey;
+    border-radius: 10px;
+
+    position: relative;
+}
+
+.content-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.video-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 650px;
+    height: auto;
+
+    padding-top: 20px;
+}
+
+.video-container button{
+    margin-top: 20px;
+
+    width: 200px;
+    height: 30px;
+
+    border: none;
+    background-color: red;
+    border-radius: 25px;
+    outline:none;
+
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: "Coda Caption";
+
+    margin-bottom: 20px;
+}
+
+.image-container.active {
+    border: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    background-color: blue;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Coda Caption';
+  }
+  
+.custom-file-upload:hover {
+    background-color: darkred;
+}
+
+#file-name {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+
+    padding-top: 10px;
+
+}
+
+#upload-image {
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 120px;
+
+    color: red;
+    font-family: "Artifika";
+}
+
+#preview-image {
+    width: 650px;
+    height: 400px;
+
+    border-radius: 10px;
+}
+
+#preview-image[src=""] {
+    display: none;
+}
+
+#delete-image {
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    display: none;
+}
+
+.image-container.active:hover #delete-image {
+    display: block;
+}
+
+.filename {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: #fff;
+    font-family: "Coda Caption";
+    padding: 8px 0;
+    font-size: 18px;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658f3 100%);
+    text-align: center;
+    display: none;
+    border-radius: 10px;
+}
+
+.image-container.active:hover .filename {
+    display: block;
+}
+
+#custom-Btn {
+    margin-top: 20px;
+    margin-left: 100px;
+
+    width: 502px;
+    height: 30px;
+
+    border: none;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658f3 100%);
+    border-radius: 25px;
+    outline:none;
+
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: "Coda Caption";
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 650px;
+    height: 200px;
+
+    margin-left: 20px;
+    margin-top: 30px;
+
+    /* border: 2px dashed grey; */
+    /* border-radius: 10px; */
+}
+  
+.star-widget input[type="radio"] {
+    display: none;
+}
+
+.star-widget label {
+    font-size: 40px;
+    color: #444;
+    padding: 10px;
+    transition: all 0.2s ease;
+    float: right;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label {
+    color: #fd4;
+}
+
+input:checked ~ label {
+    color: #fd4;
+}
+
+input#rate-5:checked ~ label {
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+
+#rate-1:checked ~ form header:before {
+    content: "Terrible";
+}
+
+#rate-2:checked ~ form header:before {
+    content: "Poor";
+}
+
+#rate-3:checked ~ form header:before {
+    content: "Fair";
+}
+
+#rate-4:checked ~ form header:before {
+    content: "Good";
+}
+
+#rate-5:checked ~ form header:before {
+    content: "Excellent";
+}
+
+form header {
+    width: 100%;
+    font-size: 25px;
+    color: rgb(206, 187, 43);
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s ease;
+    line-height: 50px;
+}
+
+#submitBtn {
+    width: 200px;
+    height: 50px;
+
+    border-radius: 20px;
+    border: none;
+    background-color: grey;
+
+    color: white;
+    
+
+    font-family: "Artifika";
+    font-size: 20px;
+    
+
+    margin-top: 50px;
+    margin-left: 250px;
+
+    cursor: pointer;
+}
+#submitBtn:hover {
+    background-color: rgb(252, 112, 112);
+}
+
+#create-review:checked ~ section .content-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-preview {
+    margin-bottom: 20px;
+}
+#video-player {
+    width: 100%;
+}
+

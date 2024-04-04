@@ -1,0 +1,81 @@
+<div class="parent-container">
+   {{> navbar}}
+
+    
+    <div class="search-container">
+
+        <div class="flex-all">
+            <div class="search-panel-top">
+            <div class="search-label">Search Result</div>
+            <div class="search-numlbl">About <span class="search-number">8</span> results</div>
+             </div>
+        </div>
+
+        <div class="search-panel-bottom">
+            <div class="search-panel-bottom-container">
+                <div class="search-panel-bottom-container-inner">
+                    <div id="store-container-card1" class="store-container-card" onclick="redirectToPage('Weclean')">
+                        <div class="store-container-card-top">
+                            <img src="image/image.jpg" class="shop_img">
+                        </div>
+                        <div class="store-container-card-middle">
+                            <img class="img_star" src="image/star.png">
+                        </div>
+                        <div class="store-container-card-bottom">
+                            <div class="store-description"><span class="laundryshop_name">Weclean</span><br>Eco-friendly laundry technologies for sustainable cleaning.</div>
+                        </div>
+                    </div>
+
+                    <div id="store-container-card2" class="store-container-card" onclick="redirectToPage('Nonstop Laundry Shop Malate')">
+                        <div class="store-container-card-top">
+                            <img src="image/image.jpg" class="shop_img">
+                        </div>
+                        <div class="store-container-card-middle">
+                            <img class="img_star" src="image/star.png">
+                            <img class="img_star" src="image/star.png">
+                        </div>
+                        <div class="store-container-card-bottom">
+                            <div class="store-description"><span class="laundryshop_name">Nonstop Laundry Shop Malate</span><br>State-of-the-art facilities for a seamless laundry experience.</div>
+                        </div>
+                    </div>
+                    
+                    <div id="store-container-card3" class="store-container-card" onclick="redirectToPage('7Folds Laundry')">
+                        <div class="store-container-card-top">
+                            <img src="image/image.jpg" class="shop_img">
+                        </div>
+                        <div class="store-container-card-middle">
+                            <img class="img_star" src="image/star.png">
+                            <img class="img_star" src="image/star.png">
+                            <img class="img_star" src="image/star.png">
+                        </div>
+                        <div class="store-container-card-bottom">
+                            <div class="store-description"><span class="laundryshop_name">7Folds Laundry</span><br>Rapid, efficient service to meet your laundry needs promptly.</div>
+                        </div>
+                    </div>
+
+                    <div id="store-container-card4" class="store-container-card" onclick="redirectToPage('XYZ Laundry Service')">
+                        <div class="store-container-card-top">
+                            <img src="image/image.jpg" class="shop_img">
+                        </div>
+                        <div class="store-container-card-middle">
+                            <img class="img_star" src="image/star.png">
+                            <img class="img_star" src="image/star.png">
+                            <img class="img_star" src="image/star.png">
+                            <img class="img_star" src="image/star.png">
+                        </div>
+                        <div class="store-container-card-bottom">
+                            <div class="store-description"><span class="laundryshop_name">XYZ Laundry Service</span><br>Luxurious garment care with a focus on quality and finesse.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu");
+    }
+</script>

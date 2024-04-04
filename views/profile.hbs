@@ -1,0 +1,143 @@
+<div class="container">
+    {{> navbar}}
+
+      <div class="bottom-container">
+        <div class="profile-details">
+
+          <div class="pfp">
+            <img src={{profile.profile_pic}} />
+          </div>
+
+          <div class="username-1">
+            <i>@{{profile.username}}</i>
+          </div>
+
+          <div class="name-edit">
+            <div class="name">
+              <h1>{{profile.name}}</h1>
+            </div>
+
+            <div class="edit-profile">
+              <a href="/edit_profile"> Edit Profile </a>
+            </div>
+
+          </div>
+
+          <hr />
+          
+          <div class="display-details">
+            <div class="user-details">
+              <h4>First Name:</h4>
+              <input type="text" value="{{profile.firstname}}" readonly />
+            </div>
+
+            <div class="user-details">
+              <h4>Last Name:</h4>
+              <input type="text" value="{{profile.lastname}}" readonly />
+            </div>
+
+            <div class="user-details">
+              <h4>Short Description:</h4>
+              <label>
+                <textarea
+                  placeholder="{{profile.shortdesc}}"
+                  readonly
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="user-details">
+              <h4>Email:</h4>
+              <input type="text" value="{{profile.email}}" readonly />
+            </div>
+
+            <div class="user-details">
+              <h4>Mobile Number:</h4>
+              <input type="text" value="0{{profile.mobnum}}" readonly />
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews">
+          <h4 style="font-weight:bold">--- REVIEWS ---</h4>
+          {{#each reviews}}
+            <div class="user-reviews">
+              <div class="store-rating">
+                {{{generateStars rating}}}
+                <div class="store-name">
+                  {{#if (checkEqual shop "Weclean Laundry Shop")}}
+                      <h4><a href="/Weclean">{{shop}}</a></h4>
+                  {{else}}
+                      {{#if (checkEqual shop "XYZ Laundry Service")}}
+                        <h4><a href="/XYZLaundryService">{{shop}}</a></h4>
+                      {{else}}
+                          {{#if (checkEqual shop "7Folds Laundry Shop")}}
+                              <h4><a href="/7FoldsLaundry">{{shop}}</a></h4>
+                          {{else}}
+                              {{#if (checkEqual shop "Nonstop Laundry Shop Malate")}}
+                                  <h4><a href="/NonstopLaundryShopMalate">{{shop}}</a></h4>
+                              {{else}}
+                                  <h4>ERROR</h4>
+                              {{/if}}
+                          {{/if}}
+                      {{/if}}
+                  {{/if}}
+                </div>
+              </div>
+
+              <div class="comments">
+                <p>{{content}}</p>
+              </div>
+              <div class="icons">
+                <div class="like">
+                  <img src="image/alli/like.png" alt="like" />
+                  <p>{{likes}}</p>
+                  <img src="image/alli/unlike.png" alt="unlike" />
+                  <p>{{dislikes}}</p>
+                </div>
+
+                <div class="timestamp">
+                  <p>{{date}}</p>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+
+          <h4 style="font-weight:bold">--- REPLIES ---</h4>
+
+          {{#each replies}}
+            <div class="user-reviews">
+              <div class="store-rating">
+                {{!-- no generate star --}}
+                <div class="store-name">
+                  <h4><a href="/">{{shopName}}</a></h4>
+                </div>
+              </div>
+
+              <div class="comments">
+                <p>{{content}}</p>
+              </div>
+              <div class="icons">
+                <div class="like">
+                  <img src="image/alli/like.png" alt="like" />
+                  <p>{{likes}}</p>
+                  <img src="image/alli/unlike.png" alt="unlike" />
+                  <p>{{dislikes}}</p>
+                </div>
+
+                <div class="timestamp">
+                  <p>{{date}}</p>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+    }
+</script>

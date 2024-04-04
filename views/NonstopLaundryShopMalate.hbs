@@ -1,0 +1,103 @@
+<div class="parent-container">
+    <div class="header-container">
+        {{> navbar}}
+    </div>
+
+    <div class="name-container-1">
+        <div class="name-container-2">
+            <h1 id="shop-name"><a href="/establishment_owner_response" class="establishment-link">Nonstop Laundry Shop Malate</a></h1>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        {{> slidebar}}
+        
+        <section>
+            <!-- Description Content -->
+            <div class="content content-1">
+                <div class="rate-tag-container">
+                <img src="image/althea/ribbon.png" alt="" class="ribbon" />
+                <span class="rate-desc">{{Nonstop.rate_desc}}</span>
+                </div>
+
+                <div class="operating-hours-container">
+                <img src="image/althea/clock.png" alt="" class="clock" />
+                <div class="time">
+                    <span class="time-1">{{Nonstop.timein}}</span>
+                    <span class="time-2">{{Nonstop.timeout}}</span>
+                </div>
+                </div>
+
+                <div class="contact-info-container">
+                <img src="image/althea/contact.png" alt="" class="contact" />
+                <div class="contact-info">
+                    <span class="contact-1"
+                    ><a href="{{Nonstop.link}}"
+                        >Nonstop Laundry Shop Malate</a
+                    ></span
+                    >
+                    <span class="contact-2">0{{Nonstop.mobnum}}</span>
+                </div>
+                </div>
+
+                <div class="map-container">
+                <div class="address">
+                    <img src="image/althea/map.gif" alt="" class="map-logo" />
+                    <span class="location">
+                    {{Nonstop.address}}
+                    </span>
+                </div>
+                <img src="{{Nonstop.map_img}}" alt="" class="actual-map" />
+                </div>
+            </div>
+
+            <!-- Review Content -->
+            <div class="content content-2">
+                <div class="review-header">
+                    <span class="number-rating">{{Nonstop.ave_rating}}.0</span>
+                    <div class="star-rating">
+                        <div class="starsRating"> {{{generateStars Nonstop.ave_rating}}}</div>
+                    </div>
+                    <span class="total-rating">All ratings (<span class="countRate">{{Nonstop.totalNoRating}}</span>)</span>
+                </div>
+
+                {{> reviewContainer}}
+            </div>
+
+            <!-- Create Review Content -->
+            {{> content_3}}
+        </section>
+    </div>
+</div>
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        var profileImages = document.querySelectorAll(".profile-img");
+
+        profileImages.forEach(function (profileImage) {
+        profileImage.addEventListener("click", function () {
+            var username = this.parentElement.querySelector(".username-1").innerText;
+
+            var fileName = "/view_other_profile_" + username;
+
+            window.location.href = fileName;
+            });
+        });
+
+        var establishmentLink = document.querySelector(".establishment-link");
+
+        establishmentLink.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default action of following the link
+
+            var fileName = "/establishment_owner_response_" + "AtashaMulach"; //username of the owner
+            console.log(fileName);
+
+            // Perform your desired action, such as navigating to the new page
+            window.location.href = fileName;
+        });
+    });
+</script>

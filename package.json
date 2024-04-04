@@ -1,0 +1,26 @@
+{
+  "name": "ccapdev-phase2-group5-main",
+  "version": "1.0.0",
+  "description": "NOTE: The node_modules folder already exists in our zip file, but in case any issues arise, here are the npm commands we used to install the external libraries.",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.3",
+    "express-fileupload": "^1.5.0",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.2.1",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}

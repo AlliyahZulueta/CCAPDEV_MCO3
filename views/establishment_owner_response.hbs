@@ -1,0 +1,307 @@
+<div class="parent-container">
+    <header class="parent-container-header">
+        <div class="logo-header-container">
+            <img src="image/alli/logo.png" class="logo-header" />
+        </div>
+
+        <div class="parent-container-header nav_title">
+            <span class="home-text">LAUNDRY HUB</span>
+        </div>
+        <div class="parent-container-header-nav-img">
+            <img
+            src="image/althea/menu.png"
+            class="menu-pic"
+            onclick="toggleMenu()"
+            />
+            <nav>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <h2>Laundry Hub</h2>
+                        </div>
+                        <hr />
+                        <a href="/homepage" class="sub-menu-link">
+                            <img src="image/althea/home.png" />
+                            <p>Home</p>
+                            <span>></span>
+                        </a>
+
+                        <a href="/search" class="sub-menu-link">
+                            <img src="image/althea/explore.png" />
+                            <p>Explore</p>
+                            <span>></span>
+                        </a>
+
+                        <a href="/profile" class="sub-menu-link">
+                            <img src="image/althea/profile-menu.png" />
+                            <p>Profile</p>
+                            <span>></span>
+                        </a>
+                        <hr />
+
+                        <a href="/log_in" class="sub-menu-link">
+                            <img src="image/althea/login.png" />
+                            <p>Log in</p>
+                            <span>></span>
+                        </a>
+
+                        <a href="/homepage" class="sub-menu-link">
+                            <img src="image/althea/logout.png" />
+                            <p>Log out</p>
+                            <span>></span>
+                        </a>
+
+                        <a href="/sign_up" class="sub-menu-link">
+                            <img src="image/althea/register.png" />
+                            <p>Register</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="after-header-container">
+        <div class="owner-profile-container">
+            <div class="owner-profile-page">
+                <div class="owner-profile-box">
+                    <div class="owner-profile-pic-box">
+                        <img src="{{owner_profile.profile_pic}}" class="img_user" />
+                    </div>
+
+                    <div class="owner-profile-info-box">
+                        <div class="owner-profile-info-box-top">
+                            <div class="owner-profile-info-box-top-title">
+                                <span class="owner-profile-info-box-top-title-lbl1"
+                                    >@{{owner_profile.username}}</span
+                                >
+                            </div>
+
+                            <div class="owner-profile-info-box-top-edit">
+                            <a href="/">
+                                <div class="owner-profile-info-box-top-title-lbl2">
+                                
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="owner-profile-info-box-bottom">
+                        <div class="owner-profile-info-box-bottom-firstname">
+                        <span class="owner-profile-info-box-bottom-firstnamelbl"
+                            >{{owner_profile.firstname}}</span
+                        >
+                        </div>
+                        <div class="owner-profile-info-box-bottom-lastname">
+                        <span class="owner-profile-info-box-bottom-lastnamelbl"
+                            >{{owner_profile.lastname}}</span
+                        >
+                        </div>
+                        <div class="owner-profile-info-box-bottom-business">
+                        <span class="owner-profile-info-box-bottom-businesslbl"
+                            >{{owner_profile.shopname}}</span
+                        >
+                        </div>
+                    </div>
+
+                    <div class="owner-profile-contact-lbl-container">
+                        <span class="owner-profile-contact-lbl">Contacts</span>
+                    </div>
+
+                    <div class="owner-profile-contact-box">
+                        <div class="owner-profile-contact-box-email">
+                        <span class="owner-profile-contact-box-emaillbl"
+                            >{{owner_profile.email}}</span
+                        >
+                        </div>
+                        <div class="owner-profile-contact-box-mobile">
+                        <span class="owner-profile-contact-box-mobilelbl"
+                            >0{{owner_profile.mobnum}}</span
+                        >
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="owner-comment-box-container">
+                    {{#each replies}}
+                        <div id="owner-comment-box1" class="owner-comment-box">
+                            <div class="comment-card1">
+                                <div class="comment-card1-top">
+                                    <div class="comment-card1-label">
+                                        <div class="comment-card1-label-commentlbl">COMMENT</div>
+                                        <div class="comment-card1-label-replylbl">
+                                            {{title}}
+                                        </div>
+                                    </div>
+
+                                    <div class="comment-card1-store-bgd">
+                                        <span class="comment-card1-store">{{shopName}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="comment-card1-middle">
+                                    <span id="owner-comment-box1-middle-commentlbl">
+                                        {{comment}}
+                                    </span>
+                                </div>
+
+                                <div class="comment-card1-bottom">
+                                    <div class="comment-card1-actions">
+                                        <div class="comment-card1-bottom-likes">
+                                            <img class="img_like" src="image/like.png" />
+                                            <span class="num-likes">{{likeCount}}</span>
+                                        </div>
+
+                                        <div class="comment-card1-bottom-dislikes">
+                                            <img class="img_dislike" src="image/dislike.png" />
+                                            <span class="num-dislikes">{{dislikeCount}}</span>
+                                        </div>
+                                    </div>
+                                    <span class="comment_past-time">{{date}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+
+                    {{!-- <div id="owner-comment-box2" class="owner-comment-box">
+                        <div class="comment-card1">
+                            <div class="comment-card1-top">
+                            <div class="comment-card1-label">
+                                <div class="comment-card1-label-commentlbl">COMMENT</div>
+                                <div class="comment-card1-label-replylbl">
+                                reply to <span class="username_reply">username2</span>
+                                </div>
+                            </div>
+                            <div class="comment-card1-store-bgd">
+                                <span class="comment-card1-store">STORE 1</span>
+                            </div>
+                            </div>
+
+                            <div class="comment-card1-middle">
+                            <span id="owner-comment-box2-middle-commentlbl">
+                                We're thrilled to learn that our services met your
+                                expectations. Providing excellent customer service and
+                                quality results is our top priority, and we're glad to know
+                                we achieved that during your visit.
+                            </span>
+                            </div>
+
+                            <div class="comment-card1-bottom">
+                            <div class="comment-card1-actions">
+                                <div class="comment-card1-bottom-likes">
+                                <img class="img_like" src="image/like.png" />
+                                <span class="num-likes">10</span>
+                                </div>
+                                <div class="comment-card1-bottom-dislikes">
+                                <img class="img_dislike" src="image/dislike.png" />
+                                <span class="num-dislikes">10</span>
+                                </div>
+                            </div>
+                            <span class="comment_past-time">1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="owner-comment-box3" class="owner-comment-box">
+                        <div class="comment-card1">
+                            <div class="comment-card1-top">
+                            <div class="comment-card1-label">
+                                <div class="comment-card1-label-commentlbl">COMMENT</div>
+                                <div class="comment-card1-label-replylbl">
+                                reply to <span class="username_reply">username2</span>
+                                </div>
+                            </div>
+                            <div class="comment-card1-store-bgd">
+                                <span class="comment-card1-store">STORE 1</span>
+                            </div>
+                            </div>
+
+                            <div class="comment-card1-middle">
+                            <span id="owner-comment-box3-middle-commentlbl">
+                                Your detailed review is incredibly valuable to us. We take
+                                all feedback seriously, and we'll use your comments to
+                                continuously improve and enhance our services. If there's
+                                anything specific you think we could do even better, please
+                                let us know.
+                            </span>
+                            </div>
+
+                            <div class="comment-card1-bottom">
+                            <div class="comment-card1-actions">
+                                <div class="comment-card1-bottom-likes">
+                                <img class="img_like" src="image/like.png" />
+                                <span class="num-likes">10</span>
+                                </div>
+                                <div class="comment-card1-bottom-dislikes">
+                                <img class="img_dislike" src="image/dislike.png" />
+                                <span class="num-dislikes">10</span>
+                                </div>
+                            </div>
+                            <span class="comment_past-time">1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="owner-comment-box4" class="owner-comment-box">
+                        <div class="comment-card1">
+                            <div class="comment-card1-top">
+                            <div class="comment-card1-label">
+                                <div class="comment-card1-label-commentlbl">COMMENT</div>
+                                <div class="comment-card1-label-replylbl">
+                                reply to <span class="username_reply">username2</span>
+                                </div>
+                            </div>
+                            <div class="comment-card1-store-bgd">
+                                <span class="comment-card1-store">STORE 1</span>
+                            </div>
+                            </div>
+
+                            <div class="comment-card1-middle">
+                            <span id="owner-comment-box4-middle-commentlbl">
+                                We're honored to have you as a satisfied customer and look
+                                forward to serving you again in the future. Your support
+                                means the world to us, and we're committed to maintaining
+                                the high standards that earned your positive review.
+                            </span>
+                            </div>
+
+                            <div class="comment-card1-bottom">
+                            <div class="comment-card1-actions">
+                                <div class="comment-card1-bottom-likes">
+                                <img class="img_like" src="image/like.png" />
+                                <span class="num-likes">10</span>
+                                </div>
+                                <div class="comment-card1-bottom-dislikes">
+                                <img class="img_dislike" src="image/dislike.png" />
+                                <span class="num-dislikes">10</span>
+                                </div>
+                            </div>
+                            <span class="comment_past-time">1 hour ago</span>
+                            </div>
+                        </div>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP SECTION-->
+    <div class="popup-review-comment-container">
+        <div class="popup-content">
+            <div class="container-top">
+                <button class="popup-close-button" onclick="hidePopup()">
+                    Close
+                </button>
+            </div>
+            <div class="container-bottom"></div>
+        </div>
+    </div>
+</div>
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu() {
+    subMenu.classList.toggle("open-menu");
+    }
+</script>

@@ -1,0 +1,75 @@
+[
+    {
+      "_id" : "Weclean Laundry Shop",
+      "profile_pic": null,
+      "shop_name": "Weclean Laundry Shop",
+      "rate_desc": "Top Laundry Shop!",
+      "timein": "Open 24 hours",
+      "timeout": "Monday - Sunday Open 24 hours",
+      "link": "http://www.weclean.com.ph/",
+      "mobnum": 9279243567,
+      "address": "750 P. Ocampo St., Malate, Manila, 1004 Metro Manila",
+      "map_img": "image/althea/Weclean-map.png",
+      "ave_rating": 5,
+      "totalNoRating": 2
+    },
+    {
+      "_id" : "XYZ Laundry Service",
+      "profile_pic": null,
+      "shop_name": "XYZ Laundry Service",
+      "rate_desc": "Unbeatable Laundry Expertise",
+      "timein": "9AM - 8PM",
+      "timeout": "Monday - Sunday 9AM - 8PM",
+      "link": "https://www.facebook.com/people/XYZI-Laundry/100057303647639/",
+      "mobnum": 282424977,
+      "address": "1606 Jorge Bocobo St, Malate, Manila, 1004 Metro Manila",
+      "map_img": "image/althea/XYZILaundry-map.png",
+      "ave_rating": 5.0,
+      "totalNoRating": 1
+    },
+    {
+      "_id" : "7Folds Laundry Shop",
+      "profile_pic": null,
+      "shop_name": "7Folds Laundry Shop",
+      "rate_desc": "Ultimate Laundry Experience",
+      "timein": "Open 24 hours",
+      "timeout": "Monday - Sunday Open 24 hours",
+      "link": "https://www.7folds.ph/",
+      "mobnum": 9279243567,
+      "address": "750 P. Ocampo St., Malate, Manila, 1004 Metro Manila",
+      "map_img": "image/althea/7FoldsLaundry-map.png",
+      "ave_rating": 5.0,
+      "totalNoRating": 2
+    },
+    {
+      "_id" : "Nonstop Laundry Shop Malate",
+      "profile_pic": null,
+      "shop_name": "Nonstop Laundry Shop Malate",
+      "rate_desc": "Superb Laundry Convenience",
+      "timein": "7AM - 7PM",
+      "timeout": "Monday - Sunday Open 7AM - 7PM",
+      "link": "https://www.facebook.com/Nonstop.laund/",
+      "mobnum": 9773408662,
+      "address": "2579 Leon Guinto St, Malate, Manila, 1004 Metro Manila",
+      "map_img": "image/althea/NonStopLaundryShop-map.png",
+      "ave_rating": 5.0,
+      "totalNoRating": 1
+    },
+
+    
+    {
+      "_id" : "Wash & Wear",
+      "profile_pic": null,
+      "shop_name": "Wash & Wear",
+      "rate_desc": "Wash and Wear instantly",
+      "timein": "Open 24 hours",
+      "timeout": "Monday - Sunday Open 24 hours",
+      "link": null,
+      "mobnum": 9152716285,
+      "address": "WH Taft Residences, Manila, 1004 Metro Manila",
+      "map_img": "image/althea/7FoldsLaundry-map.png",
+      "ave_rating": 5.0,
+      "totalNoRating": 5
+    }
+  ]
+  

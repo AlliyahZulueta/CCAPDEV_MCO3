@@ -1,0 +1,72 @@
+<div class="content content-3">
+    <div class="comment-container">
+    
+        <form action="/submit_review" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <input type="hidden" name="shop_name" value="{{content.shop_name}}">
+            <h2 class="name-store">{{content.shop_name}}</h2>
+            <div class="title-comment-image-container">
+                
+                <textarea
+                    id="review-title"
+                    name="rtitle"
+                    placeholder="Title"
+                ></textarea>
+                <textarea
+                    id="review-comment"
+                    name="rcomment"
+                    placeholder="Give comment / feedback"
+                ></textarea>
+
+                <div class="image-container">
+                    <img src="image/no_image.png" alt="Your Image" class="content-image" id="previewImage">
+                    <label for="commentImg">Choose an image or video:</label>
+                    <input type="file" id="fileUpload" name="commentImg" onchange="previewProfileImage(event)" accept="image/*,video/*">
+                </div>
+                
+            </div>
+
+            <div class="rating-container">
+                <h2>Rating: <br /></h2>
+                <div class="star-widget">
+                    <input type="radio" name="rate" id="rate-5" value="5"/>
+                    <label for="rate-5" class="fas fa-star"></label>
+
+                    <input type="radio" name="rate" id="rate-4" value="4"/>
+                    <label for="rate-4" class="fas fa-star"></label>
+
+                    <input type="radio" name="rate" id="rate-3" value="3"/>
+                    <label for="rate-3" class="fas fa-star"></label>
+
+                    <input type="radio" name="rate" id="rate-2" value="2"/>
+                    <label for="rate-2" class="fas fa-star"></label>
+
+                    <input type="radio" name="rate" id="rate-1" value="1"/>
+                    <label for="rate-1" class="fas fa-star"></label>
+                </div>
+            </div>
+            <button id="submitBtn">Publish review</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        var reviewTitle = document.getElementById('review-title').value;
+        var reviewComment = document.getElementById('review-comment').value;
+        var rate = document.querySelector('input[name="rate"]:checked');
+
+        // Form validation
+        if (!reviewTitle || !reviewComment || !rate) {
+            alert("Required fields are missing");
+            return false;
+        }
+        else {
+            showSuccessAlert();
+            return true;
+        } // Form submission allowed
+    }
+    
+    function showSuccessAlert() {
+        alert("Your review has been submitted successfully!");
+    }
+</script>

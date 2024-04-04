@@ -1,0 +1,45 @@
+[
+    {
+      "username": "AndresMulach",
+      "profile_pic": "image/althea/andres-profile.png",
+      "shopname": "Weclean Laundry Shop",  
+      "email": "owner1@gmail.com",
+      "mobnum": 1234567890,
+      "firstname" : "Andres",
+      "lastname" : "Mulach",
+      "shortdesc": "Experienced laundry shop owner with a focus on customer satisfaction."
+    },
+
+    {
+      "username": "AtashaMulach",
+      "profile_pic": "image/althea/atasha-profile.png",
+      "shopname": "Nonstop Laundry Shop Malate",
+      "email": "owner2@gmail.com",
+      "mobnum": 9876543210,
+      "firstname" : "Atasha",
+      "lastname" : "Mulach",
+      "shortdesc": "Passionate about delivering high-quality laundry services to the community."
+    },
+
+   {
+    "username": "JuliaBaretto",
+    "profile_pic": "image/althea/julia-profile.png",
+    "shopname": "7Folds Laundry Shop",  
+    "email": "owner3@example.com",
+    "mobnum": 5551234567,
+    "firstname" : "Julia",
+    "lastname" : "Baretto",
+    "shortdesc": "Innovative laundry entrepreneur dedicated to eco-friendly practices and customer satisfaction."
+  },
+  
+  {
+    "username": "JuanKarlos",
+    "profile_pic": "image/althea/juan-profile.png",
+    "shopname": "XYZ Laundry Service",
+    "email": "owner4@example.com",
+    "mobnum": 9879876543,
+    "firstname" : "Juan",
+    "lastname" : "Karlos",
+    "shortdesc": "Passionate laundry expert with a commitment to delivering impeccable services for a fresh and clean experience."
+  }
+]

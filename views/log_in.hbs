@@ -1,0 +1,39 @@
+<div class="container">
+    {{> login_navbar}}
+        <div class="form-box">
+            <h1> Log in</h1>
+            <h3>Welcome Back!</h3>
+            <p> Log in by typing your username and password</p>
+            <form action="/log_in" method="post">
+                
+                <div class="input-group">
+                    <div class="input-field">
+
+                        <input type="text" placeholder="Username" name="username">
+                    </div>
+
+                    <div class="input-field">
+                        <input type="password" id="passwordInput" placeholder="Password" name="password">
+                        <img src="image/alli/password.png" id="togglePassword" alt="Toggle Password" name="password">
+                    </div>
+
+                    <div class="rememberMe">
+                        <input type="checkbox" value="isRememberMe" id="rememberMe" name="remember"> <label> Remember Me</label>              
+                    </div>
+                    <p> No account? Sign up<a href="/sign_up"> Here!</a> </p>
+
+                </div>
+                <div class="btn-field">
+                    <button type="submit" id="loginBtn">Log in</button>
+                </div>
+            </form>
+        </div>
+</div>
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+    function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
+

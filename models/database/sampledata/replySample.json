@@ -1,0 +1,134 @@
+[
+    {
+      "_id" : "reply_1",
+      "username": "azulalala",
+      "profile_pic": "image/althea/baby-profile.png",
+      "review": "review_1",  
+      "title": "Thank you!",
+      "content": "We're glad you had a great experience with our service!",
+      "likes": 5,
+      "dislikes": 0,
+      "date": "02/14/2024"
+    },
+
+    {
+      "_id" : "reply_2",
+      "username": "taylornation",
+      "profile_pic": "image/althea/caby-profile.png",
+      "review": "review_1",
+      "title": "We appreciate your feedback",
+      "content": "Thank you for sharing your experience with us.",
+      "likes": 8,
+      "dislikes": 2,
+      "date": "02/14/2024"
+    },
+    
+    {
+      "_id" : "reply_3",
+      "username": "livvy200",
+      "profile_pic": "image/althea/daby-profile.png",
+      "review": "review_2",
+      "title": "Incredible!",
+      "content": "I'm so happy to hear you enjoyed our laundry services!",
+      "likes": 12,
+      "dislikes": 1,
+      "date": "02/14/2024"
+    },
+    
+    {
+      "_id" : "reply_4",
+      "username": "lunaris",
+      "profile_pic": "image/althea/aby-profile.png",
+      "review": "review_3",
+      "title": "Thank you for your kind words",
+      "content": "We appreciate your positive feedback!",
+      "likes": 10,
+      "dislikes": 0,
+      "date": "02/14/2024"
+    },
+    
+    {
+      "_id" : "reply_5",
+      "username": "MgaTambay01",
+      "profile_pic": "image/althea/aby-profile.png",
+      "review": "review_4",
+      "title": "We value your loyalty",
+      "content": " We're grateful for your trust in our services.",
+      "likes": 6,
+      "dislikes": 1,
+      "date": "02/14/2024"
+    },
+
+    {
+      "_id" : "reply_6",
+      "username": "taylornation",
+      "profile_pic": "image/althea/caby-profile.png",
+      "review": "review_5",
+      "title": "We value your loyalty",
+      "content": " We're grateful for your trust in our services.",
+      "likes": 6,
+      "dislikes": 1,
+      "date": "02/14/2024"
+    },
+
+    {
+      "_id" : "reply_7",
+      "username": "lunaris",
+      "profile_pic": "image/althea/aby-profile.png",
+      "review": "review_6",
+      "title": "We value your loyalty",
+      "content": " We're grateful for your trust in our services.",
+      "likes": 6,
+      "dislikes": 1,
+      "date": "02/14/2024"
+    },
+
+    {
+      "_id" : "reply_8",
+      "username": "AndresMulach",
+      "profile_pic": "image/althea/andres-profile.png",
+      "review": "review_1",
+      "title": "Thank you!",
+      "content": "Thank you so much for taking the time to leave such a wonderful comment about our laundry shop! We are thrilled to hear that you had a positive experience with our services. Your satisfaction is our top priority, and we're delighted to know that we could meet your expectations. We look forward to serving you again soon!",
+      "likes": 6,
+      "dislikes": 1,
+      "date": "02/16/2024"
+    },
+
+    {
+      "_id" : "reply_9",
+      "username": "AtashaMulach",
+      "profile_pic": "image/althea/atasha-profile.png",
+      "review": "review_3",
+      "title": "Highly appreciated!",
+      "content": "We sincerely appreciate your kind words and the time you took to share your experience with us. It's fantastic to hear that our laundry services met your needs and left you satisfied. We are committed to maintaining the highest standards of cleanliness and customer service, and feedback like yours encourages us to continue doing our best. Thank you for choosing Clean n' Fresh Laundry Services, and we hope to see you again soon!",
+      "likes": 6,
+      "dislikes": 1,
+      "date": "02/16/2024"
+    },
+
+    {
+      "_id" : "reply_10",
+      "username": "JuliaBaretto",
+      "profile_pic": "image/althea/julia-profile.png",
+      "review": "review_4",
+      "title": "Highly appreciated!",
+      "content": "Thank you for your feedback! We are delighted to hear that you were pleased with our laundry services. Providing quality and efficient service is our priority, and we're thrilled to know that we were able to meet your expectations. Your kind words motivate us to continually improve and deliver excellent service to all our customers. We look forward to serving you again in the future!",
+      "likes": 6,
+      "dislikes": 1,
+      "date": "02/16/2024"
+    },
+
+    {
+      "_id" : "reply_11",
+      "username": "JuanKarlos",
+      "profile_pic": "image/althea/juan-profile.png",
+      "review": "review_5",
+      "title": "Highly appreciated!",
+      "content": "Thank you for your wonderful review! We are overjoyed to hear that you had a positive experience with our laundry shop. Customer satisfaction is our ultimate goal, and it's rewarding to know that we were able to provide you with the quality service you deserve. We truly appreciate your support and look forward to serving you again soon!",
+      "likes": 6,
+      "dislikes": 1,
+      "date": "02/16/2024"
+    }
+  ]
+  

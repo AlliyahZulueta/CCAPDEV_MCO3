@@ -1,0 +1,313 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #092635;
+    color: #092635;    
+}
+
+.bottom-container{
+    background: #ffff;
+    background-color: #092635;
+    display: flex;
+}
+
+nav{
+    background: #D2E3C8;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative; 
+    border-bottom: #b8b2b2 solid;
+    border-width: 3px;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+
+.logo{
+    width: 150px;  
+    height: 150px;
+}
+
+h3{
+    font-size: 50px;
+    
+}
+
+
+.menu-pic{
+    width: 150px;
+    cursor: pointer;
+
+}
+
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 300px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5;
+    border: #b8b2b2 solid;
+    border-width: 0.5px;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+}
+
+
+.sub-menu{
+    background: #fff;
+    padding: 15px;
+
+}
+
+.user-info{
+    align-items: center;
+}
+
+.user-info h2{
+    font-weight: 200;
+    text-align: center;
+}
+
+
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+}
+
+.sub-menu-link p{
+    width: 100%;
+}
+
+.sub-menu-link img{
+    width: 40px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s;
+
+}
+
+.sub-menu-link:hover span{
+    transform: translate(5px);
+}
+
+
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+
+
+.profile-details{ 
+        width: 50%;
+        height:auto;
+        background: #fff;
+        padding: 20px 50px;
+        margin: 30px 20px;
+        text-align: center;
+        border: #525252 solid;
+        border-width: 1px;
+
+        border-radius: 15px;
+        
+}
+
+
+.reviews{
+    width: 50%;
+    height:auto;
+    background: #fff;
+    padding: 20px 50px;
+    margin: 30px 20px;
+    text-align: center;
+    border: #525252 solid;
+    border-width: 1px;
+
+    border-radius: 15px;
+}
+
+
+.pfp img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.username-1{
+    color: #999595;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.name-edit{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+hr{
+    margin-bottom: 40px;
+}
+
+.edit-profile a{
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.user-details{
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;  
+    border: #525252 solid;  
+    border-radius: 10px;
+    border-width: 1px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+
+    height: auto;
+}
+
+.user-details h4{
+    margin-right: 10px;
+
+}
+
+input {
+    width: 650px;
+    border: 0;
+    outline: 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.user-details textarea {
+    width: 350%;
+    border: 0;
+    outline: 0;
+    padding: 10px 10px;
+    border-radius: 20px;
+    height: auto;
+    min-height: 50px; 
+    resize: none; 
+    overflow: auto; 
+    background: transparent;
+}
+
+.reviews {
+    height: auto;
+}
+
+.user-reviews{
+    border: #525252 solid;
+    border-width: 1px;
+    padding: 10px 10px;
+    margin: 20px 0px;
+    border-radius: 10px;
+}
+
+.store-rating{
+    display: flex;
+    margin: 10px 10px;
+    
+
+    justify-content: flex-start;
+    
+}
+
+.store-name{
+
+    border: #f5f5dc solid;
+    border-width: 1px;
+    border-radius: 25px;
+    padding: 10px 25px;
+    background: #f5f5dc;
+    cursor: pointerA;
+    margin-left: 50px;
+    
+}
+
+.store-name a{
+    text-decoration: none;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating{
+    margin: 5px 15px;
+}
+
+
+.rating img{
+    width: 25px;
+    height: 25px;
+}
+
+
+
+.like{
+    display: flex;
+}
+
+.like p{
+    margin: 10px 5px;
+}
+
+.like img{
+    height: 35px;
+    margin-left: 10px;
+}
+
+.timestamp{
+    text-align: right;
+    color: #b1adad;
+    margin-top: 17px;
+    font-size: 15px;
+}
+
+.comments p{
+    text-align: justify;
+    margin: 15px 30px;
+}
+
+
+.starsImg {
+    width: 25px;
+    height: 25px;
+}
